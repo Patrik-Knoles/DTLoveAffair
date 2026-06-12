@@ -1927,3 +1927,136 @@ footer {
   color: var(--orange);
   margin-top: 1.5rem;
 }
+
+/* ══════════════════════════════════════════
+   COMPREHENSIVE MOBILE RESPONSIVENESS
+══════════════════════════════════════════ */
+
+/* ── ≤ 768px : tablets & large phones ─── */
+@media (max-width: 768px) {
+  /* Reduce heavy vertical padding on all sections */
+  #story, #schedule, #locations, #dresscode,
+  #upload-gallery, #music, #rsvp, #gift,
+  #gallery, #contacts, #faq { padding-top: 4.5rem; padding-bottom: 4.5rem; }
+  #couple { padding-top: 4rem; padding-bottom: 3rem; }
+  footer   { padding-top: 4rem; padding-bottom: 2.5rem; }
+
+  /* Gallery: 4 columns is unusable on tablets/phones */
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
+
+  /* Music player */
+  .music-player { padding: 2.2rem 1.6rem 1.8rem; }
+
+  /* Asoebi cards go full-width */
+  .asoebi-card { max-width: 100%; width: 100%; }
+}
+
+/* ── ≤ 600px : phones ─────────────────── */
+@media (max-width: 600px) {
+  /* Story quote: pull out of absolute so it doesn't overflow */
+  .story-img-quote {
+    position: static;
+    margin-top: 1.2rem;
+    right: auto; bottom: auto;
+    max-width: 100%;
+    border-radius: 10px;
+  }
+
+  /* Hero surnames letter-spacing causes overflow on narrow screens */
+  .hero-surnames { letter-spacing: 0.18em; }
+
+  /* Guest gallery upload card */
+  .gallery-upload-link { padding: 2rem 1.8rem; width: 100%; }
+}
+
+/* ── ≤ 480px : small phones ──────────── */
+@media (max-width: 480px) {
+  /* Further reduce section padding */
+  #story, #schedule, #locations, #dresscode,
+  #upload-gallery, #music, #rsvp, #gift,
+  #gallery, #contacts, #faq { padding-top: 3.5rem; padding-bottom: 3.5rem; }
+  footer { padding-top: 3rem; padding-bottom: 2rem; }
+
+  /* Hero layout */
+  .hero-content   { padding: 5.5rem 1.25rem 2rem; }
+  .hero-surnames  { letter-spacing: 0.12em; font-size: 0.48rem; }
+  .hero-hosts     { font-size: 0.63rem; letter-spacing: 0.05em; }
+  .hero-date      { font-size: 0.95rem; }
+
+  /* Nav pill: tighter on small screens */
+  .nav-pill { padding: 0.35rem 0.55rem; gap: 0; }
+  .nav-link { padding: 0.38rem 0.58rem; font-size: 0.55rem; letter-spacing: 0.08em; }
+  .nav-cta  { margin-left: 0.1rem; }
+
+  /* Countdown */
+  .countdown-unit { width: 56px; }
+  .countdown-num  { font-size: 1.75rem; }
+
+  /* Schedule event cards */
+  .event-card { padding: 1.6rem 1.4rem; }
+  .event-title { font-size: 1.2rem; }
+
+  /* Location cards */
+  .location-card { padding: 1.5rem 1.4rem 1.3rem; }
+
+  /* Gift */
+  .gift-account-number { font-size: 1.5rem; letter-spacing: 0.08em; }
+  .gift-card { padding: 1.8rem 1.4rem 1.5rem; }
+
+  /* Gallery upload */
+  .gallery-upload-link { padding: 1.8rem 1.2rem; }
+
+  /* Music */
+  .music-title  { font-size: 1.7rem; }
+  .music-player { padding: 1.8rem 1.2rem 1.5rem; }
+
+  /* RSVP section button */
+  .btn-rsvp-open { padding: 0.85rem 1.8rem; letter-spacing: 0.16em; }
+
+  /* RSVP modal */
+  .rsvp-modal        { border-radius: 18px; }
+  .rsvp-modal-header { padding: 1.8rem 1.4rem 1.4rem; border-radius: 18px 18px 0 0; }
+  .rsvp-form-body    { padding: 1.5rem; }
+  .rsvp-field        { margin-bottom: 1.1rem; }
+
+  /* Contacts */
+  .contact-card { max-width: none; flex: 1 1 130px; }
+
+  /* FAQ */
+  .faq-question { font-size: 0.95rem; padding: 1.1rem 1.2rem; }
+  .faq-answer p { padding: 0 1.2rem 1.2rem; font-size: 0.84rem; }
+
+  /* Dress code */
+  .dresscode-note { font-size: 0.95rem; }
+  .asoebi-card    { padding: 1.1rem 1.2rem; gap: 0.85rem; }
+  .asoebi-avatar  { width: 40px; height: 40px; font-size: 1.05rem; }
+  .dresscode-tag  { font-size: 0.62rem; }
+}
+
+/* ── ≤ 380px : very small phones (SE, etc.) */
+@media (max-width: 380px) {
+  /* Countdown: prevent overflow on narrowest screens */
+  .countdown-unit  { width: 50px; padding: 0.65rem 0 0.5rem; }
+  .countdown-num   { font-size: 1.5rem; }
+  .countdown-sep   { font-size: 1rem; }
+  .countdown-label { font-size: 0.32rem; letter-spacing: 0.16em; }
+
+  /* Surnames are too wide even at 0.12em — hide them */
+  .hero-surnames { display: none; }
+  .hero-content  { padding-left: 1rem; padding-right: 1rem; }
+
+  /* Nav: minimum comfortable tap size */
+  .nav-link { padding: 0.32rem 0.44rem; font-size: 0.5rem; }
+
+  /* Gallery grid: tighter gap */
+  .gallery-grid { gap: 0.5rem; }
+  .gallery-item { border-radius: 10px; }
+
+  /* Gift account number */
+  .gift-account-number { font-size: 1.3rem; }
+
+  /* Section horizontal padding tightening */
+  #schedule, #locations, #rsvp, #gift,
+  #gallery, #contacts, #faq, #music,
+  #story, #dresscode, #upload-gallery { padding-left: 1rem; padding-right: 1rem; }
+}
