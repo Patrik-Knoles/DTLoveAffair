@@ -1,25 +1,11 @@
 import { Camera } from 'lucide-react'
-import { WEDDING } from '../config'
+import { Link } from 'react-router-dom'
 
 export default function GuestGallery() {
-  const g = WEDDING.guestGallery
-  const params = new URLSearchParams({
-    id:     g.id,
-    bride:  g.bride,
-    groom:  g.groom,
-    date:   g.date,
-    venue:  g.venue,
-    max:    g.max,
-    cloud:  g.cloud,
-    preset: g.preset,
-    api:    g.apiUrl,
-  })
-  const href = `https://dearcouplegallery.netlify.app/?${params.toString()}`
-
   return (
     <section id="upload-gallery">
       <div style={{ maxWidth: '600px', margin: '0 auto' }} className="reveal">
-        <a className="gallery-upload-link" href={href} target="_blank" rel="noreferrer">
+        <Link className="gallery-upload-link" to="/gallery">
           <span className="gallery-upload-icon">
             <Camera size={42} strokeWidth={1.4} />
           </span>
@@ -29,7 +15,7 @@ export default function GuestGallery() {
             <p className="gallery-upload-sub">Upload your best shots from our big day here</p>
           </div>
           <span className="gallery-upload-btn">Upload Photos ↑</span>
-        </a>
+        </Link>
       </div>
     </section>
   )
